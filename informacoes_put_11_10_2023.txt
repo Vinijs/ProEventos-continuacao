@@ -1,0 +1,13 @@
+{
+    "id": 1,
+    "local": "Belo Horizonte",
+    "dataEvento": "2023-10-10T18:20:37.146",
+    "tema": "Angular 11",
+    "qtdPessoas": 350,
+    "imagemURL": "foto25.png",
+    "telefone": "315468479",
+    "email": "angularbh@angular.com.br",
+    "lotes": [],
+    "redesSociais": [],
+    "palestrantesEventos": []
+  }

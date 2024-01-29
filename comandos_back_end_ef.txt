@@ -1,0 +1,7 @@
+*Para criar os migrations executar o comando no diretório: Back/src:
+
+- dotnet ef migrations add Initial -p ProEventos.Persistence -s ProEventos.API
+
+*Para criar os migrations executar o comando no diretório: Back/src:
+
+- dotnet ef database update -s ProEventos.API

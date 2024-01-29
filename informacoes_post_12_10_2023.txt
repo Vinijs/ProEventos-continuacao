@@ -1,0 +1,36 @@
+{
+    "local": "São Paulo",
+    "dataEvento": "2023-10-10T18:20:37.146",
+    "tema": "Angular 11 e suas novidades",
+    "qtdPessoas": 350,
+    "imagemURL": "foto2.png",
+    "telefone": "3214564887",
+    "email": "angularbh@angular.com",
+    "lotes": [
+      {
+        "nome": "1º Lote",
+        "preco": 50,
+        "dataInicio": "2023-10-11T16:55:21.259",
+        "dataFim": "2023-10-11T16:55:21.26",
+        "quantidade": 150,
+      },
+      {
+        "nome": "2º Lote",
+        "preco": 150.25,
+        "dataInicio": "2023-10-11T16:55:21.259",
+        "dataFim": "2023-10-11T16:55:21.26",
+        "quantidade": 200,
+      }
+    ],
+    "redesSociais": [
+    {
+       "nome": "facebook",
+      "url": "http://facebook.com/programadamente",
+    },
+    {
+       "nome": "facebook",
+      "url": "http://facebook.com/SPAngular",
+    }
+],
+    "palestrantesEventos": []
+  }
