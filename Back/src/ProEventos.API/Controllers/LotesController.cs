@@ -57,11 +57,11 @@ public class LotesController : ControllerBase
          try
         {
             var lote = await _loteService.GetLoteByIdsAsync(eventoId, loteId);
-            if(lote == null) return NotFound("Nenhum evento encontrado.");
+            if(lote == null) return NoContent();
             
             return await _loteService.DeleteLote(lote.EventoId, lote.Id)?
-                   Ok("Lote Deletado") :
-                   BadRequest("Lote não deletado");
+                   Ok(new { message = "Lote Deletado" }) :
+                   throw new Exception("Ocorreu um problema não específico ao tentar deletar Lote.");
            
         }
         catch (Exception ex)
