@@ -1,5 +1,5 @@
 <div class="row">
-  <div [ngClass]="{'col-md-8 pr-0':modoEditar,'col-md-12': !modoEditar}">
+  <div [ngClass]="{'col-md-8 pr-0': modoEditar,'col-md-12': !modoEditar}">
     <div class="card rounded shadow-sm">
       <form [formGroup]="form">
         <div class="p-3">
@@ -34,7 +34,7 @@
                bsDatepicker [bsConfig]="bsConfig"
                formControlName="dataEvento" placeholder="Insira a Data e Hora" [(ngModel)]="evento.dataEvento">
               <div *ngIf="f.dataEvento.errors?.required && f.dataEvento.touched" class="invalid-feedback">
-                Data e Hora são obrigatório.s
+                Data e Hora é obrigatório
               </div>
             </div>
           </div>
@@ -116,30 +116,32 @@
                     </div>
                     <div class="form-group col-md-4">
                       <label>Quantidade</label>
-                      <input [ngClass]="cssValidator(lotes.get(i+'.quantidade'))"
-                      type="text" class="form-control" formControlName="quantidade" placeholder="000">
+                      <input type="text" class="form-control"
+                       [ngClass]="cssValidator(lotes.get(i+'.quantidade'))"
+                       formControlName="quantidade" placeholder="000">
                     </div>
                     <div class="form-group col-md-4">
                       <label>Preço</label>
-                      <input [ngClass]="cssValidator(lotes.get(i+'.preco'))"
-                      type="text" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }"
-                        class="form-control" formControlName="preco"
+                      <input type="text" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }"
+                      class="form-control"
+                      [ngClass]="cssValidator(lotes.get(i+'.preco'))"
+                       formControlName="preco"
                       placeholder="R$ 0,00">
                     </div>
                     <div class="form-group col-md-4">
                       <label>Data Início</label>
                       <input
                       type="datetime" class="form-control"
-                      value="{{ lotes.get(i+'.dataInicio').value | date: 'dd/MM/yyyy' }}"
-                      bsDatepicker [bsConfig]="bsConfigLote"
+                      bsDatepicker
+                      value="{{lotes.get(i+'.dataInicio').value | DateFormatPipe }}"
                       formControlName="dataInicio" placeholder="01/01/2019"
                       (bsValueChange)="mudarValorData($event, i, 'dataInicio')">
                     </div>
                     <div class="form-group col-md-4">
                       <label>Data Fim</label>
                       <input type="datetime" class="form-control"
-                        value="{{ lotes.get(i+'.dataFim').value | date: 'dd/MM/yyyy' }}"
-                        bsDatepicker [bsConfig]="bsConfigLote"
+                        bsDatepicker
+                        value="{{lotes.get(i+'.dataFim').value | DateFormatPipe }}"
                         formControlName="dataFim" placeholder="01/01/2019"
                         (bsValueChange)="mudarValorData($event, i, 'dataFim')">
                     </div>
