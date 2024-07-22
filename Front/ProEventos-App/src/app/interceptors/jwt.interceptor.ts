@@ -5,7 +5,7 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { Observable, take } from 'rxjs';
+import { Observable, catchError, take, throwError } from 'rxjs';
 import { User } from '@app/models/identity/User';
 import { AccountService } from '@app/services/account.service';
 
@@ -32,6 +32,13 @@ export class JwtInterceptor implements HttpInterceptor {
 
 
 
-    return next.handle(request);
+    return next.handle(request).pipe(
+      catchError(error => {
+        if(error){
+          localStorage.removeItem('user')
+        }
+        return throwError(error);
+      })
+    );
   }
 }
